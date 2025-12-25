@@ -1,0 +1,548 @@
+{
+    "assault_rifle": {
+        "type": "AR",
+        "image": "assault-rifle.png",
+        "imageOffsetX": -6,
+        "imageOffsetY": -2.5,
+        "holdAnimation": "overhand",
+        "offsetX": 0,
+        "offsetY": -4.5,
+        "damage": 4,
+        "critDamage": 2,
+        "knockback": 0.1,
+        "piercing": 1,
+        "attackSpeed": 10,
+        "projectile": "bullet",
+        "projectileSpeed": 25,
+        "projectileCount": 1,
+        "projectileSpread": 2,
+        "recoil": 0.05,
+        "knockbackResistance": 1,
+        "ammoMax": 40,
+        "reloadSpeed": 120,
+        "customizations": {
+            "body": {
+                "wood": {
+                    "imageX": 5,
+                    "imageY": 1,
+                    "imageWidth": 10,
+                    "imageHeight": 3,
+                    "imageOffsetX": 5,
+                    "imageOffsetY": 1,
+                    "attackSpeed": 1.25,
+                    "reloadSpeed": 0.8
+                },
+                "steel": {
+                    "imageX": 5,
+                    "imageY": 25,
+                    "imageWidth": 10,
+                    "imageHeight": 3,
+                    "imageOffsetX": 5,
+                    "imageOffsetY": 1,
+                    "attackSpeed": 1,
+                    "reloadSpeed": 1
+                },
+                "titanium": {
+                    "imageX": 5,
+                    "imageY": 49,
+                    "imageWidth": 10,
+                    "imageHeight": 3,
+                    "imageOffsetX": 5,
+                    "imageOffsetY": 1,
+                    "attackSpeed": 0.8,
+                    "reloadSpeed": 1.25
+                },
+                "gold": {
+                    "imageX": 5,
+                    "imageY": 73,
+                    "imageWidth": 10,
+                    "imageHeight": 3,
+                    "imageOffsetX": 5,
+                    "imageOffsetY": 1,
+                    "attackSpeed": 1.5,
+                    "reloadSpeed": 1.1
+                }
+            },
+            "stock": {
+                "wood": {
+                    "images": [
+                        {
+                            "conditions": {
+                                "stock_size": "small"
+                            },
+                            "x": 2,
+                            "y": 2,
+                            "width": 3,
+                            "height": 3,
+                            "offsetX": 2,
+                            "offsetY": 2
+                        },
+                        {
+                            "conditions": {
+                                "stock_size": "medium"
+                            },
+                            "x": 1,
+                            "y": 10,
+                            "width": 4,
+                            "height": 4,
+                            "offsetX": 1,
+                            "offsetY": 2
+                        },
+                        {
+                            "conditions": {
+                                "stock_size": "large"
+                            },
+                            "x": 0,
+                            "y": 18,
+                            "width": 5,
+                            "height": 4,
+                            "offsetX": 0,
+                            "offsetY": 2
+                        }
+                    ],
+                    "knockbackResistance": 0.5,
+                    "reloadSpeed": 0.9
+                },
+                "steel": {
+                    "images": [
+                        {
+                            "conditions": {
+                                "stock_size": "small"
+                            },
+                            "x": 2,
+                            "y": 26,
+                            "width": 3,
+                            "height": 3,
+                            "offsetX": 2,
+                            "offsetY": 2
+                        },
+                        {
+                            "conditions": {
+                                "stock_size": "medium"
+                            },
+                            "x": 1,
+                            "y": 34,
+                            "width": 4,
+                            "height": 4,
+                            "offsetX": 1,
+                            "offsetY": 2
+                        },
+                        {
+                            "conditions": {
+                                "stock_size": "large"
+                            },
+                            "x": 0,
+                            "y": 42,
+                            "width": 5,
+                            "height": 4,
+                            "offsetX": 0,
+                            "offsetY": 2
+                        }
+                    ],
+                    "knockbackResistance": 1,
+                    "reloadSpeed": 1
+                },
+                "titanium": {
+                    "images": [
+                        {
+                            "conditions": {
+                                "stock_size": "small"
+                            },
+                            "x": 2,
+                            "y": 50,
+                            "width": 3,
+                            "height": 3,
+                            "offsetX": 2,
+                            "offsetY": 2
+                        },
+                        {
+                            "conditions": {
+                                "stock_size": "medium"
+                            },
+                            "x": 1,
+                            "y": 58,
+                            "width": 4,
+                            "height": 4,
+                            "offsetX": 1,
+                            "offsetY": 2
+                        },
+                        {
+                            "conditions": {
+                                "stock_size": "large"
+                            },
+                            "x": 0,
+                            "y": 66,
+                            "width": 5,
+                            "height": 4,
+                            "offsetX": 0,
+                            "offsetY": 2
+                        }
+                    ],
+                    "knockbackResistance": 2,
+                    "reloadSpeed": 1.1
+                },
+                "gold": {
+                    "images": [
+                        {
+                            "conditions": {
+                                "stock_size": "small"
+                            },
+                            "x": 2,
+                            "y": 74,
+                            "width": 3,
+                            "height": 3,
+                            "offsetX": 2,
+                            "offsetY": 2
+                        },
+                        {
+                            "conditions": {
+                                "stock_size": "medium"
+                            },
+                            "x": 1,
+                            "y": 82,
+                            "width": 4,
+                            "height": 4,
+                            "offsetX": 1,
+                            "offsetY": 2
+                        },
+                        {
+                            "conditions": {
+                                "stock_size": "large"
+                            },
+                            "x": 0,
+                            "y": 90,
+                            "width": 5,
+                            "height": 4,
+                            "offsetX": 0,
+                            "offsetY": 2
+                        }
+                    ],
+                    "knockbackResistance": 0.5,
+                    "reloadSpeed": 1.2
+                }
+            },
+            "stock_size": {
+                "small": {
+                    "recoil": 1.5,
+                    "reloadSpeed": 0.9
+                },
+                "medium": {
+                    "recoil": 1,
+                    "reloadSpeed": 1
+                },
+                "large": {
+                    "recoil": 0.6,
+                    "reloadSpeed": 1.1
+                }
+            },
+            "scope_size": {
+                "small": {
+                    "imageX": 7,
+                    "imageY": 0,
+                    "imageWidth": 2,
+                    "imageHeight": 1,
+                    "imageOffsetX": 7,
+                    "imageOffsetY": 0,
+                    "projectileSpread": 1.5,
+                    "reloadSpeed": 0.8
+                },
+                "medium": {
+                    "imageX": 7,
+                    "imageY": 8,
+                    "imageWidth": 3,
+                    "imageHeight": 1,
+                    "imageOffsetX": 7,
+                    "imageOffsetY": 0,
+                    "projectileSpread": 1,
+                    "reloadSpeed": 1
+                },
+                "large": {
+                    "imageX": 6,
+                    "imageY": 16,
+                    "imageWidth": 4,
+                    "imageHeight": 1,
+                    "imageOffsetX": 6,
+                    "imageOffsetY": 0,
+                    "projectileSpread": 0.75,
+                    "reloadSpeed": 1.2
+                }
+            },
+            "barrel_size": {
+                "small": {
+                    "imageX": 15,
+                    "imageY": 2,
+                    "imageWidth": 1,
+                    "imageHeight": 1,
+                    "imageOffsetX": 15,
+                    "imageOffsetY": 2,
+                    "projectileSpeed": 0.8,
+                    "reloadSpeed": 0.8
+                },
+                "medium": {
+                    "imageX": 15,
+                    "imageY": 10,
+                    "imageWidth": 2,
+                    "imageHeight": 1,
+                    "imageOffsetX": 15,
+                    "imageOffsetY": 2,
+                    "projectileSpeed": 1,
+                    "reloadSpeed": 1
+                },
+                "large": {
+                    "imageX": 15,
+                    "imageY": 18,
+                    "imageWidth": 3,
+                    "imageHeight": 1,
+                    "imageOffsetX": 15,
+                    "imageOffsetY": 2,
+                    "projectileSpeed": 1.25,
+                    "reloadSpeed": 1.25
+                }
+            },
+            "magazine_size": {
+                "small": {
+                    "imageX": 8,
+                    "imageY": 4,
+                    "imageWidth": 2,
+                    "imageHeight": 1,
+                    "imageOffsetX": 8,
+                    "imageOffsetY": 4,
+                    "ammoMax": 0.75,
+                    "reloadSpeed": 0.6
+                },
+                "medium": {
+                    "imageX": 8,
+                    "imageY": 12,
+                    "imageWidth": 2,
+                    "imageHeight": 2,
+                    "imageOffsetX": 8,
+                    "imageOffsetY": 4,
+                    "ammoMax": 1,
+                    "reloadSpeed": 1
+                },
+                "large": {
+                    "imageX": 8,
+                    "imageY": 20,
+                    "imageWidth": 2,
+                    "imageHeight": 3,
+                    "imageOffsetX": 8,
+                    "imageOffsetY": 4,
+                    "ammoMax": 1.5,
+                    "reloadSpeed": 1.8
+                }
+            }
+        }
+    },
+    "machine_gun": {
+        "type": "MG",
+        "image": "machine_gun.png",
+        "imageOffsetX": -5,
+        "imageOffsetY": -3.5,
+        "holdAnimation": "underhand",
+        "offsetX": 0,
+        "offsetY": -0.5,
+        "damage": 2,
+        "critDamage": 2,
+        "knockback": 0.1,
+        "piercing": 1,
+        "attackSpeed": 3,
+        "projectile": "bullet",
+        "projectileSpeed": 25,
+        "projectileCount": 1,
+        "projectileSpread": 5,
+        "recoil": 0.01,
+        "knockbackResistance": 1,
+        "ammoMax": 100,
+        "reloadSpeed": 120,
+        "customizations": {}
+    },
+    "shotgun": {
+        "type": "SG",
+        "image": "shotgun.png",
+        "imageOffsetX": -5,
+        "imageOffsetY": -3,
+        "offsetX": 0,
+        "offsetY": -4.5,
+        "damage": 10,
+        "critDamage": 2,
+        "knockback": 0.1,
+        "piercing": 1,
+        "attackSpeed": 40,
+        "projectile": "bullet",
+        "projectileSpeed": 15,
+        "projectileCount": 4,
+        "projectileSpread": 15,
+        "recoil": 0.05,
+        "knockbackResistance": 1,
+        "ammoMax": 4,
+        "reloadSpeed": 180,
+        "customizations": {}
+    },
+    "sniper_rifle": {
+        "type": "SR",
+        "image": "sniper-rifle.png",
+        "imageOffsetX": -5,
+        "imageOffsetY": -2.5,
+        "offsetX": 0,
+        "offsetY": -4.5,
+        "damage": 30,
+        "critDamage": 5,
+        "knockback": 0.1,
+        "piercing": 1,
+        "attackSpeed": 60,
+        "projectile": "bullet",
+        "projectileSpeed": 25,
+        "projectileCount": 1,
+        "projectileSpread": 1,
+        "recoil": 0.05,
+        "knockbackResistance": 1,
+        "ammoMax": 1,
+        "reloadSpeed": 300,
+        "customizations": {}
+    },
+    "railgun": {
+        "type": "RG",
+        "image": "railgun.png",
+        "imageOffsetX": -5,
+        "imageOffsetY": -3,
+        "offsetX": 0,
+        "offsetY": 0,
+        "damage": 0.1,
+        "critDamage": 2,
+        "knockback": 0.1,
+        "piercing": 4,
+        "attackSpeed": 3,
+        "projectile": "bullet",
+        "projectileSpeed": 25,
+        "projectileCount": 20,
+        "projectileSpread": 5,
+        "recoil": 0.01,
+        "knockbackResistance": 1,
+        "ammoMax": 6,
+        "reloadSpeed": 120,
+        "customizations": {}
+    },
+    "rocket_launcher": {
+        "type": "RL",
+        "image": "rocket-launcher.png",
+        "imageOffsetX": -5,
+        "imageOffsetY": -3,
+        "offsetX": 0,
+        "offsetY": -4.5,
+        "damage": 40,
+        "critDamage": 2,
+        "knockback": 0.1,
+        "piercing": 1,
+        "attackSpeed": 60,
+        "projectile": "rocket",
+        "projectileSpeed": 6,
+        "projectileCount": 1,
+        "projectileSpread": 0,
+        "recoil": 1,
+        "knockbackResistance": 1,
+        "ammoMax": 3,
+        "reloadSpeed": 240,
+        "customizations": {}
+    },
+    "pastry_machine_gun": {
+        "type": "MG",
+        "image": "pastry_machine_gun.png",
+        "imageOffsetX": -5,
+        "imageOffsetY": -4,
+        "holdAnimation": "underhand",
+        "offsetX": 0,
+        "offsetY": 0,
+        "damage": 4,
+        "critDamage": 2,
+        "knockback": 0.1,
+        "piercing": 1,
+        "attackSpeed": 10,
+        "projectiles": {
+            "green_macaron": {
+                "weight": 1,
+                "damage": 1,
+                "critDamage": 1,
+                "knockback": 1,
+                "piercing": 1,
+                "projectileSpeed": 1,
+                "projectileCount": 1,
+                "projectileSpread": 1,
+                "recoil": 1
+            },
+            "red_macaron": {
+                "weight": 1,
+                "damage": 2,
+                "critDamage": 1,
+                "knockback": 1,
+                "piercing": 1,
+                "projectileSpeed": 1.25,
+                "projectileCount": 1,
+                "projectileSpread": 1,
+                "recoil": 1
+            },
+            "cyan_macaron": {
+                "weight": 1,
+                "damage": 1,
+                "critDamage": 1,
+                "knockback": 1,
+                "piercing": 1,
+                "projectileSpeed": 2,
+                "projectileCount": 1,
+                "projectileSpread": 1,
+                "recoil": 1
+            },
+            "lime_macaron": {
+                "weight": 1,
+                "damage": 1,
+                "critDamage": 1,
+                "knockback": 1,
+                "piercing": 1,
+                "projectileSpeed": 0.8,
+                "projectileCount": 2,
+                "projectileSpread": 1,
+                "recoil": 1
+            },
+            "chocolate_chip": {
+                "weight": 10,
+                "damage": 0.2,
+                "critDamage": 1,
+                "knockback": 1,
+                "piercing": 1,
+                "projectileSpeed": 1,
+                "projectileCount": 1,
+                "projectileSpread": 1,
+                "recoil": 1
+            },
+            "cookie": {
+                "weight": 1,
+                "damage": 1.5,
+                "critDamage": 1.5,
+                "knockback": 1,
+                "piercing": 1,
+                "projectileSpeed": 1,
+                "projectileCount": 1,
+                "projectileSpread": 3,
+                "recoil": 1
+            },
+            "cake": {
+                "weight": 0.1,
+                "damage": 30,
+                "critDamage": 2,
+                "knockback": 2,
+                "piercing": 1,
+                "projectileSpeed": 0.3,
+                "projectileCount": 1,
+                "projectileSpread": 2,
+                "recoil": 2
+            }
+        },
+        "projectileSpeed": 5,
+        "projectileCount": 1,
+        "projectileSpread": 0,
+        "recoil": 0.01,
+        "knockbackResistance": 1,
+        "ammoMax": 100,
+        "reloadSpeed": 120,
+        "customizations": {}
+    }
+}

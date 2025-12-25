@@ -1,0 +1,14 @@
+fix server particleList - done
+
+
+weapons:
+
+body: increased fire rate, increased reload
+stock: increased knockback resistance, increased reload
+stock size: decreased recoil, increased reload
+scope: decreased spread, increased reload
+barrel: increased damage/velocity, increased reload
+magazine: increased max ammo, increased reload
+bullets: increased damage/velocity, decreased knockback
+
+round stats for weapons?

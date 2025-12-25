@@ -1,0 +1,104 @@
+{
+    "bullet": {
+        "image": "bullet.png",
+        "width": 8,
+        "height": 1,
+        "phantomFrames": 3,
+        "gravity": 0.1,
+        "collisionEvents": []
+    },
+    "rocket": {
+        "image": "rocket.png",
+        "width": 11,
+        "height": 7,
+        "phantomFrames": 3,
+        "gravity": 0.25,
+        "collisionEvents": [
+            {
+                "type": "explosion",
+                "data": {
+                    "radius": 40
+                }
+            }
+        ]
+    },
+    "green_macaron": {
+        "image": "macaron.png",
+        "imageX": 0,
+        "imageY": 0,
+        "imageWidth": 5,
+        "imageHeight": 4,
+        "width": 5,
+        "height": 4,
+        "phantomFrames": 3,
+        "gravity": 0.1,
+        "collisionEvents": []
+    },
+    "red_macaron": {
+        "image": "macaron.png",
+        "imageX": 6,
+        "imageY": 0,
+        "imageWidth": 5,
+        "imageHeight": 4,
+        "width": 5,
+        "height": 4,
+        "phantomFrames": 3,
+        "gravity": 0.1,
+        "collisionEvents": []
+    },
+    "cyan_macaron": {
+        "image": "macaron.png",
+        "imageX": 0,
+        "imageY": 5,
+        "imageWidth": 5,
+        "imageHeight": 4,
+        "width": 5,
+        "height": 4,
+        "phantomFrames": 3,
+        "gravity": 0.1,
+        "collisionEvents": []
+    },
+    "lime_macaron": {
+        "image": "macaron.png",
+        "imageX": 6,
+        "imageY": 5,
+        "imageWidth": 5,
+        "imageHeight": 4,
+        "width": 5,
+        "height": 4,
+        "phantomFrames": 3,
+        "gravity": 0.1,
+        "collisionEvents": []
+    },
+    "chocolate_chip": {
+        "image": "chocolate_chip.png",
+        "width": 3,
+        "height": 2,
+        "phantomFrames": 3,
+        "gravity": 0.05,
+        "collisionEvents": []
+    },
+    "cookie": {
+        "image": "cookie.png",
+        "width": 7,
+        "height": 3,
+        "phantomFrames": 3,
+        "gravity": 0.1,
+        "collisionEvents": []
+    },
+    "cake": {
+        "image": "cake.png",
+        "width": 11,
+        "height": 11,
+        "phantomFrames": 3,
+        "gravity": 0.03,
+        "collisionEvents": [
+            {
+                "type": "explosion",
+                "data": {
+                    "radius": 40
+                }
+            }
+        ]
+    }
+}

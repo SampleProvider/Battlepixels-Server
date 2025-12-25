@@ -1,0 +1,11 @@
+{
+    "port": 3000,
+    "tps": 60,
+    "databaseEnabled": false,
+    "autoSaveInterval": 5,
+    "autoBackupInterval": 60,
+    "clientPhysicsEnabled": true,
+    "clientPhysicsBuffer": 1024,
+    "clientPhysicsBufferAccumulationRate": 16,
+    "respawnTime": 300
+}

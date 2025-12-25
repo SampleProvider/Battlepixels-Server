@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "node16",
+    "target": "es6",
+    // "jsx": "react",
+    // "allowJs": true,
+    "moduleResolution": "node16",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "resolveJsonModule": true
+  }
+}
