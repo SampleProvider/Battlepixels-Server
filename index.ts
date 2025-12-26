@@ -113,4 +113,4 @@ update();
 // // }, 1000 / config.tps);
 // }, 1000 / 80);
 
-export { config, tick };
+export { tick };
