@@ -36,6 +36,14 @@ class Particle {
             vectorY: vectorY,
         });
     }
+    static addFireworkParticle(x: number, y: number, radius: number, vectorX: number, vectorY: number) {
+        new Particle("firework", x, y, {
+            radius: radius,
+            vectorX: vectorX,
+            vectorY: vectorY,
+            color: Math.random(),
+        });
+    }
 }
 
 export { Particle };

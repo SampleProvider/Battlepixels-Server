@@ -1,7 +1,7 @@
 {
     "assault_rifle": {
         "type": "AR",
-        "image": "assault-rifle.png",
+        "image": "assault_rifle.png",
         "imageOffsetX": -6,
         "imageOffsetY": -2.5,
         "holdAnimation": "overhand",
@@ -301,31 +301,31 @@
             },
             "magazine_size": {
                 "small": {
-                    "imageX": 8,
+                    "imageX": 5,
                     "imageY": 4,
-                    "imageWidth": 2,
-                    "imageHeight": 1,
-                    "imageOffsetX": 8,
+                    "imageWidth": 7,
+                    "imageHeight": 2,
+                    "imageOffsetX": 5,
                     "imageOffsetY": 4,
                     "ammoMax": 0.75,
                     "reloadSpeed": 0.6
                 },
                 "medium": {
-                    "imageX": 8,
+                    "imageX": 5,
                     "imageY": 12,
-                    "imageWidth": 2,
+                    "imageWidth": 7,
                     "imageHeight": 2,
-                    "imageOffsetX": 8,
+                    "imageOffsetX": 5,
                     "imageOffsetY": 4,
                     "ammoMax": 1,
                     "reloadSpeed": 1
                 },
                 "large": {
-                    "imageX": 8,
+                    "imageX": 5,
                     "imageY": 20,
                     "imageWidth": 2,
                     "imageHeight": 3,
-                    "imageOffsetX": 8,
+                    "imageOffsetX": 5,
                     "imageOffsetY": 4,
                     "ammoMax": 1.5,
                     "reloadSpeed": 1.8
@@ -380,7 +380,7 @@
     },
     "sniper_rifle": {
         "type": "SR",
-        "image": "sniper-rifle.png",
+        "image": "sniper_rifle.png",
         "imageOffsetX": -5,
         "imageOffsetY": -2.5,
         "offsetX": 0,
@@ -424,7 +424,7 @@
     },
     "rocket_launcher": {
         "type": "RL",
-        "image": "rocket-launcher.png",
+        "image": "rocket_launcher.png",
         "imageOffsetX": -5,
         "imageOffsetY": -3,
         "offsetX": 0,
@@ -542,6 +542,29 @@
         "recoil": 0.01,
         "knockbackResistance": 1,
         "ammoMax": 100,
+        "reloadSpeed": 120,
+        "customizations": {}
+    },
+    "firework_launcher": {
+        "type": "RL",
+        "image": "firework_launcher.png",
+        "imageOffsetX": -5,
+        "imageOffsetY": -3.5,
+        "holdAnimation": "underhand",
+        "offsetX": 0,
+        "offsetY": -4.5,
+        "damage": 15,
+        "critDamage": 2,
+        "knockback": 0.1,
+        "piercing": 1,
+        "attackSpeed": 60,
+        "projectile": "firework",
+        "projectileSpeed": 3,
+        "projectileCount": 1,
+        "projectileSpread": 0,
+        "recoil": 0.01,
+        "knockbackResistance": 1,
+        "ammoMax": 3,
         "reloadSpeed": 120,
         "customizations": {}
     }

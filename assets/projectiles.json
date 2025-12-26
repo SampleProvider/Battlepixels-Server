@@ -4,6 +4,7 @@
         "width": 8,
         "height": 1,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.1,
         "collisionEvents": []
     },
@@ -12,6 +13,7 @@
         "width": 11,
         "height": 7,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.25,
         "collisionEvents": [
             {
@@ -31,6 +33,7 @@
         "width": 5,
         "height": 4,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.1,
         "collisionEvents": []
     },
@@ -43,6 +46,7 @@
         "width": 5,
         "height": 4,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.1,
         "collisionEvents": []
     },
@@ -55,6 +59,7 @@
         "width": 5,
         "height": 4,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.1,
         "collisionEvents": []
     },
@@ -67,6 +72,7 @@
         "width": 5,
         "height": 4,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.1,
         "collisionEvents": []
     },
@@ -75,6 +81,7 @@
         "width": 3,
         "height": 2,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.05,
         "collisionEvents": []
     },
@@ -83,6 +90,7 @@
         "width": 7,
         "height": 3,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.1,
         "collisionEvents": []
     },
@@ -91,10 +99,27 @@
         "width": 11,
         "height": 11,
         "phantomFrames": 3,
+        "despawnTime": 3600,
         "gravity": 0.03,
         "collisionEvents": [
             {
                 "type": "explosion",
+                "data": {
+                    "radius": 120
+                }
+            }
+        ]
+    },
+    "firework": {
+        "image": "firework.png",
+        "width": 13,
+        "height": 5,
+        "phantomFrames": 3,
+        "despawnTime": 60,
+        "gravity": 0,
+        "collisionEvents": [
+            {
+                "type": "firework",
                 "data": {
                     "radius": 40
                 }

@@ -16,6 +16,7 @@ interface ProjectileData {
     width: number,
     height: number,
     phantomFrames: number,
+    despawnTime: number,
     gravity: number,
     collisionEvents: CollisionEvent[],
 }
@@ -32,13 +33,13 @@ class Projectile extends Entity {
     
     rotation = 0;
 
-    despawnTime = 0;
-
     damage = 0;
     critDamage = 0;
     knockback = 0;
 
     piercing = 0;
+
+    despawnTime = 0;
 
     gravity = 0;
 
@@ -50,7 +51,7 @@ class Projectile extends Entity {
 
     static data: {[key: string]: ProjectileData} = projectileData;
 
-    constructor(projectileType: string, x: number, y: number, speedX: number, speedY: number, map: number, rotation: number, despawnTime: number, damage: number, critDamage: number, knockback: number, piercing: number, parent: Entity) {
+    constructor(projectileType: string, x: number, y: number, speedX: number, speedY: number, map: number, rotation: number, damage: number, critDamage: number, knockback: number, piercing: number, parent: Entity) {
         super();
 
         this.x = x;
@@ -59,7 +60,6 @@ class Projectile extends Entity {
         this.speedY = speedY;
         this.map = map;
         this.rotation = rotation;
-        this.despawnTime = despawnTime;
         this.damage = damage;
         this.critDamage = critDamage;
         this.knockback = knockback;
@@ -69,6 +69,7 @@ class Projectile extends Entity {
         this.width = Projectile.data[this.projectileType].width;
         this.height = Projectile.data[this.projectileType].height;
         this.phantomFrames = Projectile.data[this.projectileType].phantomFrames;
+        this.despawnTime = Projectile.data[this.projectileType].despawnTime;
         this.gravity = Projectile.data[this.projectileType].gravity;
         this.collisionEvents = Projectile.data[this.projectileType].collisionEvents;
 
@@ -89,10 +90,15 @@ class Projectile extends Entity {
     update() {
         this.despawnTime -= 1;
         if (this.despawnTime < 0) {
+            this.onCollision(this.x, this.y);
             this.remove();
             return;
         }
         this.speedY += this.gravity;
+        if (this.projectileType == "firework") {
+            this.speedX *= 1.03;
+            this.speedY *= 1.03;
+        }
         let speedX = this.speedX;
         let speedY = this.speedY;
         this.speedX /= 50;
@@ -146,15 +152,15 @@ class Projectile extends Entity {
                 let nextY = this.y;
                 this.x = lastX;
                 this.y = lastY;
-                let normal = calculateNormal(SimulatedMap.list.get(this.map), this.x, this.y, 5);
-                // this.onCollision(nextX, nextY);
-                let dot = this.speedX * normal[0] + this.speedY * normal[1];
-                this.speedX -= dot * 2 * normal[0];
-                this.speedY -= dot * 2 * normal[1];
-                this.speedX *= 0.9;
-                this.speedY *= 0.9;
-                // this.remove();
-                // return;
+                // let normal = calculateNormal(SimulatedMap.list.get(this.map), this.x, this.y, 5);
+                this.onCollision(nextX, nextY);
+                // let dot = this.speedX * normal[0] + this.speedY * normal[1];
+                // this.speedX -= dot * 2 * normal[0];
+                // this.speedY -= dot * 2 * normal[1];
+                // this.speedX *= 0.9;
+                // this.speedY *= 0.9;
+                this.remove();
+                return;
             }
         }
         // this.speedX = speedX;
@@ -184,10 +190,11 @@ class Projectile extends Entity {
             SimulatedMap.list.get(this.map).addUpdate(Math.floor(nextX), Math.floor(nextY), 0, 0, 0);
         }
         for (let i in this.collisionEvents) {
-            if (this.collisionEvents[i].type == "explosion") {
-                if (this.x < 0 || this.x > SimulatedMap.list.get(this.map).width || this.y < 0 || this.y > SimulatedMap.list.get(this.map).height) {
-                }
-                else {
+            switch (this.collisionEvents[i].type) {
+                case "explosion": {
+                    if (this.x < 0 || this.x > SimulatedMap.list.get(this.map).width || this.y < 0 || this.y > SimulatedMap.list.get(this.map).height) {
+                        break;
+                    }
                     let radius = this.collisionEvents[i].data.radius;
                     let normal = calculateNormal(SimulatedMap.list.get(this.map), this.x, this.y, radius);
                     explode(SimulatedMap.list.get(this.map), this.x, this.y, radius / 2, normal);
@@ -201,7 +208,6 @@ class Projectile extends Entity {
                         }
                         let weight = Math.pow(Math.E, -Math.pow(distance, 2) / (2 * Math.pow(radius / 2, 2)));
                         player.hp = Math.max(player.hp - this.damage * weight, 0);
-                        console.log(weight)
                         player.speedX += ((player.x - this.x) / distance * weight * radius + normal[0] * weight * radius) * this.knockback / player.weapons[player.controls.weapon].knockbackResistance * 10;
                         player.speedY += ((player.y - this.y) / distance * weight * radius + normal[1] * weight * radius) * this.knockback / player.weapons[player.controls.weapon].knockbackResistance * 10;
                         Particle.addDamageParticle(this.x, this.y, this.damage * weight);
@@ -216,6 +222,28 @@ class Projectile extends Entity {
                     //     }
                     // }
                     // SimulatedMap.list.get(this.map).addUpdate(Math.floor(this.x), Math.floor(this.y), 0, 0, 0);
+                    break;
+                }
+                case "firework": {
+                    let radius = this.collisionEvents[i].data.radius;
+                    let normal = calculateNormal(SimulatedMap.list.get(this.map), this.x, this.y, radius);
+                    for (let [_, player] of Player.list) {
+                        if (player.waitingForClient || player.respawning) {
+                            continue;
+                        }
+                        let distance = Math.sqrt(Math.pow(player.x - this.x, 2) + Math.pow(player.y - this.y, 2));
+                        if (distance > radius) {
+                            continue;
+                        }
+                        let weight = Math.pow(Math.E, -Math.pow(distance, 2) / (2 * Math.pow(radius / 2, 2)));
+                        player.hp = Math.max(player.hp - this.damage * weight, 0);
+                        player.speedX += ((player.x - this.x) / distance * weight * radius + normal[0] * weight * radius) * this.knockback / player.weapons[player.controls.weapon].knockbackResistance * 10;
+                        player.speedY += ((player.y - this.y) / distance * weight * radius + normal[1] * weight * radius) * this.knockback / player.weapons[player.controls.weapon].knockbackResistance * 10;
+                        Particle.addDamageParticle(this.x, this.y, this.damage * weight);
+                    }
+                    // Particle.addFireworkParticle(this.x, this.y, radius, normal[0], normal[1]);
+                    Particle.addFireworkParticle(this.x, this.y, radius, 0, 0);
+                    break;
                 }
             }
         }

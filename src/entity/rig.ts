@@ -410,7 +410,28 @@ class Rig extends Entity {
             projectileSpread: 0,
             recoil: 0,
             knockbackResistance: 0,
-            ammo: 40,
+            ammo: 100,
+            ammoMax: 0,
+            reloadSpeed: 0,
+            customizations: {},
+        },
+        {
+            id: "firework_launcher",
+            offsetX: 0,
+            offsetY: 0,
+            animation: WeaponAnimationType.Attack,
+            animationFrame: 0,
+            damage: 0,
+            critDamage: 0,
+            knockback: 0,
+            piercing: 0,
+            attackSpeed: 0,
+            projectileSpeed: 0,
+            projectileCount: 0,
+            projectileSpread: 0,
+            recoil: 0,
+            knockbackResistance: 0,
+            ammo: 3,
             ammoMax: 0,
             reloadSpeed: 0,
             customizations: {},
@@ -585,7 +606,7 @@ class Rig extends Entity {
             for (let i = 0; i < weapon.projectileCount; i++) {
                 if (Rig.weaponData[weapon.id].projectile != null) {
                     let angle = this.controls.angle + (this.random() * 2 - 1) * weapon.projectileSpread;
-                    new Projectile(Rig.weaponData[weapon.id].projectile, this.x + weapon.offsetX, this.y + weapon.offsetY, this.speedX + weapon.projectileSpeed * Math.cos(angle), this.speedY + weapon.projectileSpeed * Math.sin(angle), this.map, angle, 60 * 60, weapon.damage, weapon.critDamage, weapon.knockback, weapon.piercing, this);
+                    new Projectile(Rig.weaponData[weapon.id].projectile, this.x + weapon.offsetX, this.y + weapon.offsetY, this.speedX + weapon.projectileSpeed * Math.cos(angle), this.speedY + weapon.projectileSpeed * Math.sin(angle), this.map, angle, weapon.damage, weapon.critDamage, weapon.knockback, weapon.piercing, this);
                     this.speedX += -weapon.projectileSpeed * weapon.recoil * Math.cos(angle);
                     this.speedY += -weapon.projectileSpeed * weapon.recoil * Math.sin(angle);
                 }
@@ -601,7 +622,7 @@ class Rig extends Entity {
                         if (random <= 0) {
                             for (let k = 0; k < projectileData.projectileCount; k++) {
                                 let angle = this.controls.angle + (this.random() * 2 - 1) * weapon.projectileSpread * projectileData.projectileSpread;
-                                new Projectile(j, this.x + weapon.offsetX, this.y + weapon.offsetY, this.speedX + weapon.projectileSpeed * projectileData.projectileSpeed * Math.cos(angle), this.speedY + weapon.projectileSpeed * projectileData.projectileSpeed * Math.sin(angle), this.map, angle, 60 * 60, weapon.damage * projectileData.damage, weapon.critDamage * projectileData.critDamage, weapon.knockback * projectileData.knockback, weapon.piercing * projectileData.piercing, this);
+                                new Projectile(j, this.x + weapon.offsetX, this.y + weapon.offsetY, this.speedX + weapon.projectileSpeed * projectileData.projectileSpeed * Math.cos(angle), this.speedY + weapon.projectileSpeed * projectileData.projectileSpeed * Math.sin(angle), this.map, angle, weapon.damage * projectileData.damage, weapon.critDamage * projectileData.critDamage, weapon.knockback * projectileData.knockback, weapon.piercing * projectileData.piercing, this);
                                 this.speedX += -weapon.projectileSpeed * projectileData.projectileSpeed * weapon.recoil * projectileData.recoil * Math.cos(angle);
                                 this.speedY += -weapon.projectileSpeed * projectileData.projectileSpeed * weapon.recoil * projectileData.recoil * Math.sin(angle);
                             }
