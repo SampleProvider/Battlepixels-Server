@@ -2,7 +2,9 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import * as fs from "fs";
 
-import config from "./config.json";
+// import config from "./config.json";
+
+let config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
 
 import { logger } from "./src/log.js";
 import { database } from "./src/database.js";
@@ -113,4 +115,4 @@ update();
 // // }, 1000 / config.tps);
 // }, 1000 / 80);
 
-export { tick };
+export { config, tick };
