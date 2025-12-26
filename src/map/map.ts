@@ -1,7 +1,7 @@
 import { createNoise2D } from "simplex-noise";
 import alea from "alea";
 import { Jimp } from "jimp";
-import { Pixel, addUpdatedChunk, pixelData, pixels } from "./pixels.ts";
+import { Pixel, addUpdatedChunk, pixelData, pixels } from "./pixels.js";
 
 interface GridUpdate {
     x: number,

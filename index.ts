@@ -4,11 +4,11 @@ import * as fs from "fs";
 
 let config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
 
-import { logger } from "./src/log.ts";
-import { database } from "./src/database.ts";
-import { Player } from "./src/entity/player.ts";
-import { Projectile } from "./src/entity/projectile.ts";
-import { SimulatedMap } from "./src/map/map.ts";
+import { logger } from "./src/log.js";
+import { database } from "./src/database.js";
+import { Player } from "./src/entity/player.js";
+import { Projectile } from "./src/entity/projectile.js";
+import { SimulatedMap } from "./src/map/map.js";
 
 const server = createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");

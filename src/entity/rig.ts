@@ -1,8 +1,8 @@
-import { logger } from "../log.ts";
-import { SimulatedMap } from "../map/map.ts";
-import { Pixel, pixels, State } from "../map/pixels.ts";
-import { Entity, EntityType } from "./entity.ts";
-import { Projectile } from "./projectile.ts";
+import { logger } from "../log.js";
+import { SimulatedMap } from "../map/map.js";
+import { Pixel, pixels, State } from "../map/pixels.js";
+import { Entity, EntityType } from "./entity.js";
+import { Projectile } from "./projectile.js";
 import weaponData from "../../assets/weapons.json";
 
 interface WeaponCustomization {

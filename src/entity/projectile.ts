@@ -1,8 +1,8 @@
-import { Entity, EntityType } from "./entity.ts";
-import { SimulatedMap } from "../map/map.ts";
-import { Pixel, pixels, State, calculateNormal, explode } from "../map/pixels.ts";
-import { Player } from "./player.ts";
-import { Particle } from "./particle.ts";
+import { Entity, EntityType } from "./entity.js";
+import { SimulatedMap } from "../map/map.js";
+import { Pixel, pixels, State, calculateNormal, explode } from "../map/pixels.js";
+import { Player } from "./player.js";
+import { Particle } from "./particle.js";
 import projectileData from "../../assets/projectiles.json";
 
 interface ProjectileData {

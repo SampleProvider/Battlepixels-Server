@@ -1,11 +1,11 @@
 import { Socket } from "socket.io";
-import { config, tick } from "../../index.ts";
-import { logger } from "../log.ts";
-import { SimulatedMap } from "../map/map.ts";
-import { Entity, EntityType } from "./entity.ts";
-import { Rig, Customizations } from "./rig.ts";
-import { Particle } from "./particle.ts";
-import { database } from "../database.ts";
+import { config, tick } from "../../index.js";
+import { logger } from "../log.js";
+import { SimulatedMap } from "../map/map.js";
+import { Entity, EntityType } from "./entity.js";
+import { Rig, Customizations } from "./rig.js";
+import { Particle } from "./particle.js";
+import { database } from "../database.js";
 
 class Player extends Rig {
     type = EntityType.Player;

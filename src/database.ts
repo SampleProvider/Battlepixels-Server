@@ -1,9 +1,9 @@
 import fs from "fs";
 import bcrypt from "bcrypt";
-import { Player } from "./entity/player.ts";
-import { logger } from "./log.ts";
-import { Customizations } from "./entity/rig.ts";
-import { config } from "../index.ts";
+import { Player } from "./entity/player.js";
+import { logger } from "./log.js";
+import { Customizations } from "./entity/rig.js";
+import { config } from "../index.js";
 
 interface Account {
     password: string,
