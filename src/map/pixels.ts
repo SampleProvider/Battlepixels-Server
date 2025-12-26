@@ -1,5 +1,5 @@
-import { SimulatedMap } from "./map.ts";
-import { random } from "./random.ts";
+import { SimulatedMap } from "./map.js";
+import { random } from "./random.js";
 
 enum Pixel {
     Id = 0,

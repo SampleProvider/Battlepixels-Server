@@ -1,6 +1,6 @@
-import { mulberry32 } from "../random.ts";
-import { SimulatedMap } from "../map/map.ts";
-import { Pixel, pixels, State } from "../map/pixels.ts";
+import { mulberry32 } from "../random.js";
+import { SimulatedMap } from "../map/map.js";
+import { Pixel, pixels, State } from "../map/pixels.js";
 
 enum EntityType {
     Entity,
