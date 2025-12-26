@@ -1,5 +1,6 @@
 import { Socket } from "socket.io";
-import { config, tick } from "../../index.js";
+import config from "../../config.json";
+import { tick } from "../../index.js";
 import { logger } from "../log.js";
 import { SimulatedMap } from "../map/map.js";
 import { Entity, EntityType } from "./entity.js";
