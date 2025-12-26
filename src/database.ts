@@ -3,7 +3,8 @@ import bcrypt from "bcrypt";
 import { Player } from "./entity/player.js";
 import { logger } from "./log.js";
 import { Customizations } from "./entity/rig.js";
-import { config } from "../index.js";
+
+import config from "../config.json";
 
 interface Account {
     password: string,

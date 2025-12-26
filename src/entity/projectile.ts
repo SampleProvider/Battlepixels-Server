@@ -146,15 +146,15 @@ class Projectile extends Entity {
                 let nextY = this.y;
                 this.x = lastX;
                 this.y = lastY;
-                // let normal = calculateNormal(SimulatedMap.list.get(this.map), this.x, this.y, 5);
-                this.onCollision(nextX, nextY);
-                // let dot = this.speedX * normal[0] + this.speedY * normal[1];
-                // this.speedX -= dot * 2 * normal[0];
-                // this.speedY -= dot * 2 * normal[1];
-                // this.speedX *= 0.9;
-                // this.speedY *= 0.9;
-                this.remove();
-                return;
+                let normal = calculateNormal(SimulatedMap.list.get(this.map), this.x, this.y, 5);
+                // this.onCollision(nextX, nextY);
+                let dot = this.speedX * normal[0] + this.speedY * normal[1];
+                this.speedX -= dot * 2 * normal[0];
+                this.speedY -= dot * 2 * normal[1];
+                this.speedX *= 0.9;
+                this.speedY *= 0.9;
+                // this.remove();
+                // return;
             }
         }
         // this.speedX = speedX;

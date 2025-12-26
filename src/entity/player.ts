@@ -1,5 +1,6 @@
 import { Socket } from "socket.io";
-import { config, tick } from "../../index.js";
+import { tick } from "../../index.js";
+import config from "../../config.json";
 import { logger } from "../log.js";
 import { SimulatedMap } from "../map/map.js";
 import { Entity, EntityType } from "./entity.js";
@@ -130,7 +131,7 @@ class Player extends Rig {
         
         this.socket.on("disconnect", () => {
             this.remove();
-            if (this.name != null) {
+            if (this.map != null) {
                 Player.chatAll(this.name + " left", "red");
                 database.savePlayer(this);
             }

@@ -2,7 +2,7 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import * as fs from "fs";
 
-let config = JSON.parse(fs.readFileSync("./config.json", "utf8"));
+import config from "./config.json";
 
 import { logger } from "./src/log.js";
 import { database } from "./src/database.js";
