@@ -51,6 +51,7 @@ class Player extends Rig {
             }
             logger.info("[Game] Sign in attempted by \"" + data.username + "\"");
             let result = await database.signIn(data.username, data.password);
+            console.log("sign in result: " + result)
             if (result != "success") {
                 this.socket.emit("signIn", {
                     result: result,

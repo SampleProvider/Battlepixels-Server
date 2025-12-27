@@ -76,13 +76,13 @@ setInterval(function() {
     database.backup();
 }, config.autoBackupInterval * 60 * 1000);
 
-process.on("uncaughtException", async function(err) {
-    logger.fatal(err);
-    logger.info("[Server] Process exited with exit code 1");
-    database.save();
-    await logger.awaitLogs();
-    process.exit(1);
-});
+// process.on("uncaughtException", async function(err) {
+//     logger.fatal(err);
+//     logger.info("[Server] Process exited with exit code 1");
+//     database.save();
+//     await logger.awaitLogs();
+//     process.exit(1);
+// });
 
 let tick = 0;
 let tickTime = performance.now();
