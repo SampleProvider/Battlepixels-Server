@@ -18,6 +18,7 @@ interface ProjectileData {
     phantomFrames: number,
     despawnTime: number,
     gravity: number,
+    changeRotation: boolean,
     collisionEvents: CollisionEvent[],
 }
 
@@ -31,17 +32,19 @@ class Projectile extends Entity {
 
     projectileType: string;
     
-    rotation = 0;
+    rotation: number;
 
-    damage = 0;
-    critDamage = 0;
-    knockback = 0;
+    damage: number;
+    critDamage: number;
+    knockback: number;
 
-    piercing = 0;
+    piercing: number;
 
-    despawnTime = 0;
+    despawnTime: number;
 
-    gravity = 0;
+    gravity: number;
+
+    changeRotation: boolean;
 
     collisionEvents: CollisionEvent[] = [];
 
@@ -71,6 +74,7 @@ class Projectile extends Entity {
         this.phantomFrames = Projectile.data[this.projectileType].phantomFrames;
         this.despawnTime = Projectile.data[this.projectileType].despawnTime;
         this.gravity = Projectile.data[this.projectileType].gravity;
+        this.changeRotation = Projectile.data[this.projectileType].changeRotation;
         this.collisionEvents = Projectile.data[this.projectileType].collisionEvents;
 
         this.parent = parent;
@@ -96,8 +100,11 @@ class Projectile extends Entity {
         }
         this.speedY += this.gravity;
         if (this.projectileType == "firework") {
-            this.speedX *= 1.03;
-            this.speedY *= 1.03;
+            // this.speedX *= 1.03;
+            // this.speedY *= 1.03;
+            let speed = this.speedX * Math.cos(this.rotation) + this.speedY * Math.sin(this.rotation);
+            this.speedX += speed * Math.cos(this.rotation) / 60;
+            this.speedY += speed * Math.sin(this.rotation) / 60;
         }
         let speedX = this.speedX;
         let speedY = this.speedY;
@@ -167,7 +174,9 @@ class Projectile extends Entity {
         // this.speedY = speedY;
         this.speedX *= 50;
         this.speedY *= 50;
-        this.rotation = Math.atan2(this.speedY, this.speedX);
+        if (this.changeRotation) {
+            this.rotation = Math.atan2(this.speedY, this.speedX);
+        }
         // if (this.x <= 0 || this.x >= SimulatedMap.list.get(this.map).width - 4 || this.y <= 0 || this.y >= SimulatedMap.list.get(this.map).height - 4) {
         //     return true;
         // }

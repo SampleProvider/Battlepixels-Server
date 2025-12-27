@@ -6,6 +6,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.1,
+        "changeRotation": true,
         "collisionEvents": []
     },
     "rocket": {
@@ -15,6 +16,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.25,
+        "changeRotation": true,
         "collisionEvents": [
             {
                 "type": "explosion",
@@ -35,6 +37,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.1,
+        "changeRotation": true,
         "collisionEvents": []
     },
     "red_macaron": {
@@ -48,6 +51,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.1,
+        "changeRotation": true,
         "collisionEvents": []
     },
     "cyan_macaron": {
@@ -61,6 +65,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.1,
+        "changeRotation": true,
         "collisionEvents": []
     },
     "lime_macaron": {
@@ -74,6 +79,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.1,
+        "changeRotation": true,
         "collisionEvents": []
     },
     "chocolate_chip": {
@@ -83,6 +89,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.05,
+        "changeRotation": true,
         "collisionEvents": []
     },
     "cookie": {
@@ -92,6 +99,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.1,
+        "changeRotation": true,
         "collisionEvents": []
     },
     "cake": {
@@ -101,6 +109,7 @@
         "phantomFrames": 3,
         "despawnTime": 3600,
         "gravity": 0.03,
+        "changeRotation": true,
         "collisionEvents": [
             {
                 "type": "explosion",
@@ -114,9 +123,10 @@
         "image": "firework.png",
         "width": 13,
         "height": 5,
-        "phantomFrames": 3,
+        "phantomFrames": 1,
         "despawnTime": 60,
         "gravity": 0,
+        "changeRotation": false,
         "collisionEvents": [
             {
                 "type": "firework",
