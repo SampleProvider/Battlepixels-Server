@@ -42,8 +42,8 @@ const io = new Server(server, {
 
 
 
-// let map = new SimulatedMap(2048, 2048);
-let map = new SimulatedMap(1024, 1024);
+let map = new SimulatedMap(2048, 2048);
+// let map = new SimulatedMap(1024, 1024);
 // let map = new SimulatedMap(128, 128);
 // let map = new SimulatedMap(512, 512);
 
