@@ -443,10 +443,10 @@ class Player extends Rig {
             });
         this.socket.emit("updateData", {
             tick: tick,
-            entity: entityData,
-            particle: Particle.list,
-            map: mapData,
-            clientPlayer: clientPlayerData,
+            // entity: entityData,
+            // particle: Particle.list,
+            // map: mapData,
+            // clientPlayer: clientPlayerData,
         });
     }
     static sendAllPackets() {
