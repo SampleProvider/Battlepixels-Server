@@ -437,7 +437,7 @@ class Player extends Rig {
             tick: tick,
             entity: entityData,
             particle: Particle.list,
-            // map: mapData,
+            map: mapData,
             clientPlayer: clientPlayerData,
         });
     }
