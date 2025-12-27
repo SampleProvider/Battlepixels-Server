@@ -85,7 +85,11 @@ class Player extends Rig {
             this.initMap = true;
             this.tick = tick;
             this.overrideTick = this.tick;
-            socket.emit("initData", {
+            this.socket.emit("initData", {
+                id: this.id,
+                tick: this.tick,
+            });
+            this.socket.emit("updateData", {
                 id: this.id,
                 tick: this.tick,
             });
@@ -325,7 +329,7 @@ class Player extends Rig {
             Player.chatAll(message, "black");
         });
 
-        socket.emit("configData", {
+        this.socket.emit("configData", {
             tps: config.tps,
             databaseEnabled: config.databaseEnabled,
             clientPhysicsEnabled: config.clientPhysicsEnabled,
@@ -433,7 +437,6 @@ class Player extends Rig {
         this.initMap = false;
         let clientPlayerData = this.getClientPacket();
         this.overrideClient = false;
-        console.log("sending packet to " + this.name)
         this.socket.emit("updateData", {
             tick: tick,
             entity: entityData,
