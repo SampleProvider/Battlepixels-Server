@@ -15,6 +15,7 @@ const server = createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Max-Age", 2592000);
     if (req.method === "GET") {
+        console.log(req.url)
         fs.readFile("./" + req.url, function(err, data) {
             if (err){
                 throw err;
@@ -76,13 +77,14 @@ setInterval(function() {
     database.backup();
 }, config.autoBackupInterval * 60 * 1000);
 
-// process.on("uncaughtException", async function(err) {
-//     logger.fatal(err);
-//     logger.info("[Server] Process exited with exit code 1");
-//     database.save();
-//     await logger.awaitLogs();
-//     process.exit(1);
-// });
+process.on("uncaughtException", async function(err: Error) {
+    console.log(err.stack);
+    logger.fatal(err);
+    logger.info("[Server] Process exited with exit code 1");
+    database.save();
+    await logger.awaitLogs();
+    process.exit(1);
+});
 
 let tick = 0;
 let tickTime = performance.now();
