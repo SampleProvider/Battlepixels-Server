@@ -433,6 +433,7 @@ class Player extends Rig {
         this.initMap = false;
         let clientPlayerData = this.getClientPacket();
         this.overrideClient = false;
+        console.log("sending packet to " + this.name)
         this.socket.emit("updateData", {
             tick: tick,
             entity: entityData,
@@ -443,7 +444,6 @@ class Player extends Rig {
     }
     static sendAllPackets() {
         for (let [_, player] of Player.list) {
-        console.log(player.map)
             if (player.map == null) {
                 continue;
             }
