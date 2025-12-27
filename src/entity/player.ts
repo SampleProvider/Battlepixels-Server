@@ -433,20 +433,12 @@ class Player extends Rig {
         this.initMap = false;
         let clientPlayerData = this.getClientPacket();
         this.overrideClient = false;
-        if (tick % 600 == 0) {
-            console.log("sending packet to " + this.name)
-        }
-        this.socket.emit("updateData", "SLDFHKSLDJF");
-            this.socket.emit("initData", {
-                id: this.id,
-                tick: this.tick,
-            });
         this.socket.emit("updateData", {
             tick: tick,
-            // entity: entityData,
-            // particle: Particle.list,
+            entity: entityData,
+            particle: Particle.list,
             // map: mapData,
-            // clientPlayer: clientPlayerData,
+            clientPlayer: clientPlayerData,
         });
     }
     static sendAllPackets() {
