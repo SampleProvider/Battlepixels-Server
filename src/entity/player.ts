@@ -89,10 +89,6 @@ class Player extends Rig {
                 id: this.id,
                 tick: this.tick,
             });
-            this.socket.emit("updateData", {
-                id: this.id,
-                tick: this.tick,
-            });
         
             Player.chatAll(this.name + " joined", "lime");
         });
@@ -437,6 +433,14 @@ class Player extends Rig {
         this.initMap = false;
         let clientPlayerData = this.getClientPacket();
         this.overrideClient = false;
+        if (tick % 600 == 0) {
+            console.log("sending packet to " + this.name)
+        }
+        this.socket.emit("updateData", "SLDFHKSLDJF");
+            this.socket.emit("initData", {
+                id: this.id,
+                tick: this.tick,
+            });
         this.socket.emit("updateData", {
             tick: tick,
             entity: entityData,
