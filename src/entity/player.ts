@@ -443,6 +443,7 @@ class Player extends Rig {
     }
     static sendAllPackets() {
         for (let [_, player] of Player.list) {
+        console.log(player.map)
             if (player.map == null) {
                 continue;
             }

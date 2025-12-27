@@ -15,9 +15,13 @@ const server = createServer((req, res) => {
     res.setHeader("Access-Control-Allow-Methods", "GET");
     res.setHeader("Access-Control-Max-Age", 2592000);
     if (req.method === "GET") {
-        console.log(req.url)
+        if (req.url == "/") {
+            res.writeHead(200, { "Content-Type": "text/plain" });
+            res.end("test");
+            return;
+        }
         fs.readFile("./" + req.url, function(err, data) {
-            if (err){
+            if (err) {
                 throw err;
             }
             res.writeHead(200, { "Content-Type": "text/plain" });
