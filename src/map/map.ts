@@ -376,7 +376,7 @@ class SimulatedMap {
             tick: this.tick,
             width: this.width,
             height: this.height,
-            grid: this.grid,
+            compressedGrid: this.compressGrid(),
             chunks: this.nextChunks,
         };
     }
@@ -384,6 +384,42 @@ class SimulatedMap {
         return {
             updates: this.updates,
         };
+    }
+
+    compressGrid() {
+        let compressed = [];
+        let id = this.grid[0];
+        let speedX = this.grid[1];
+        let speedY = this.grid[2];
+        let backgroundId = this.grid[3];
+        let amount = 1;
+        for (let y = 0; y < this.height; y++) {
+            for (let x = 0; x < this.width; x++) {
+                if (id != this.grid[(x + y * this.width) * this.stride] || speedX != this.grid[(x + y * this.width) * this.stride + 1] || speedY != this.grid[(x + y * this.width) * this.stride + 2] || backgroundId != this.grid[(x + y * this.width) * this.stride + 3]) {
+                    compressed.push(...[id, speedX, speedY, backgroundId, amount]);
+                    id = this.grid[(x + y * this.width) * this.stride];
+                    speedX = this.grid[(x + y * this.width) * this.stride + 1];
+                    speedY = this.grid[(x + y * this.width) * this.stride + 2];
+                    backgroundId = this.grid[(x + y * this.width) * this.stride + 3];
+                    amount = 0;
+                }
+                amount += 1;
+            }
+        }
+        compressed.push(...[id, speedX, speedY, backgroundId, amount]);
+        return new Float32Array(compressed);
+    }
+    decompressGrid(compressed: Float32Array) {
+        let index = 0;
+        for (let i = 0; i < compressed.length; i += 5) {
+            for (let j = 0; j < compressed[i + 4]; j++) {
+                this.grid[index * this.stride] = compressed[i];
+                this.grid[index * this.stride + 1] = compressed[i + 1];
+                this.grid[index * this.stride + 2] = compressed[i + 2];
+                this.grid[index * this.stride + 3] = compressed[i + 3];
+                index += 1;
+            }
+        }
     }
 }
 
